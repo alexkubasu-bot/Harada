@@ -1,0 +1,965 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Harada Method | Alex Kubasu - EPR Consultant Journey&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/lucide@latest"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* { font-family: 'Inter', sans-serif; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.serif { font-family: 'Playfair Display', serif; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.glass-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.85);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(20px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dark .glass-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(15, 23, 42, 0.85);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-8px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.task-row { transition: all 0.3s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.task-row:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(99, 102, 241, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(8px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calendar-day { transition: all 0.2s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.calendar-day:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 20;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.fade-in-up { animation: fadeInUp 0.6s ease-out; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeInUp {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(20px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.stagger-1 { animation-delay: 0.1s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.stagger-2 { animation-delay: 0.2s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.stagger-3 { animation-delay: 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.checkbox-harada {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>appearance: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 3px solid #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.checkbox-harada:checked {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #059669 0%, #10b981 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.checkbox-harada:checked::after {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '✓';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translate(-50%, -50%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.central-dream-glow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #1e293b 0%, #334155 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.central-dream-glow::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: -50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: -50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 200%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 200%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: pulse 4s ease-in-out infinite;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulse {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { transform: scale(1); opacity: 0.5; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>50% { transform: scale(1.1); opacity: 0.8; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.month-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 1024px) { .month-grid { grid-template-columns: repeat(2, 1fr); } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 640px) { .month-grid { grid-template-columns: 1fr; } }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-body { border-left: 4px solid #f97316; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-control { border-left: 4px solid #3b82f6; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-technique { border-left: 4px solid #8b5cf6; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-digital { border-left: 4px solid #06b6d4; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-mind { border-left: 4px solid #ec4899; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-spirit { border-left: 4px solid #f59e0b; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-karma { border-left: 4px solid #10b981; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.pillar-team { border-left: 4px solid #6366f1; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.confetti {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #10b981;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: confetti-fall 3s ease-out forwards;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 9999;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes confetti-fall {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.resource-link { transition: all 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.resource-link:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateX(8px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(99, 102, 241, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-950 min-h-screen text-slate-800 dark:text-slate-100 transition-colors duration-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="glass-panel sticky top-0 z-50 px-6 py-4 mb-8 border-b border-slate-200 dark:border-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="target" class="w-7 h-7"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h1 class="text-2xl font-bold tracking-tight"&gt;Harada Method&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-500 dark:text-slate-400 font-medium"&gt;EPR Consultant &amp; Digital Expert Journey&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-sm font-medium"&gt;Alex Kubasu&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-slate-400"&gt;|&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-sm text-slate-600 dark:text-slate-400"&gt;WWF-Kenya&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button onclick="toggleTheme()" class="p-3 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="sun" class="w-5 h-5 hidden dark:block"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="moon" class="w-5 h-5 block dark:hidden"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-6 pb-12 space-y-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="central-dream-glow rounded-3xl p-8 text-white shadow-2xl fade-in-up relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center gap-3 mb-4 text-emerald-300"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="sparkles" class="w-5 h-5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-sm font-bold uppercase tracking-wider"&gt;Central Dream&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="serif text-3xl md:text-4xl font-bold leading-tight max-w-4xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Become a fully fledged &lt;span class="text-emerald-300"&gt;EPR Consultant&lt;/span&gt; and &lt;span class="text-cyan-300"&gt;Digital Expert&lt;/span&gt; par excellence while excelling as Green Economy and Policy Lead at WWF-Kenya.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-6 flex items-center gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xl font-bold" id="overallProgress"&gt;0%&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-sm opacity-80"&gt;Overall Progress&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="h-8 w-px bg-white/20"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-2 text-sm opacity-80"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="calendar" class="w-4 h-4"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span id="currentDate"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in-up stagger-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 text-center hover:scale-105 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="activity" class="w-7 h-7"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-3xl font-bold text-slate-800 dark:text-white" id="bodyScore"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-slate-500 dark:text-slate-400 mt-1"&gt;Body&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 text-center hover:scale-105 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="sliders" class="w-7 h-7"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-3xl font-bold text-slate-800 dark:text-white" id="controlScore"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-slate-500 dark:text-slate-400 mt-1"&gt;Control&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 text-center hover:scale-105 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="graduation-cap" class="w-7 h-7"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-3xl font-bold text-slate-800 dark:text-white" id="techniqueScore"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-slate-500 dark:text-slate-400 mt-1"&gt;Technique&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 text-center hover:scale-105 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="cpu" class="w-7 h-7"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-3xl font-bold text-slate-800 dark:text-white" id="digitalScore"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-slate-500 dark:text-slate-400 mt-1"&gt;Digital&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-6 fade-in-up stagger-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="heart-pulse" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Body&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;Physical Foundation&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-orange-600" id="bodyPercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="bodyTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-control"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="compass" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Control&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;Time &amp; Discipline&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-blue-600" id="controlPercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="controlTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-technique"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="book-open" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Technique&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;EPR Expertise&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-purple-600" id="techniquePercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="techniqueTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-digital"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="code-2" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Digital Mastery&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;Tech &amp; Tools&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-cyan-600" id="digitalPercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="digitalTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-mind"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-pink-100 dark:bg-pink-900/30 text-pink-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="brain" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Mind&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;Mental Growth&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-pink-600" id="mindPercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="mindTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-spirit"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="flame" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Spirit&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;Purpose &amp; Drive&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-amber-600" id="spiritPercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="spiritTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-karma"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="scale" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Karma&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;Integrity &amp; Service&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-emerald-600" id="karmaPercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="karmaTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="glass-panel rounded-2xl p-6 pillar-card pillar-team"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="users" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-xl font-bold"&gt;Team&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm text-slate-500"&gt;Network &amp; Collaboration&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-bold text-indigo-600" id="teamPercent"&gt;0%&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2" id="teamTasks"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="glass-panel rounded-2xl p-8 fade-in-up stagger-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-2xl font-bold flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="calendar-check" class="w-7 h-7 text-emerald-500"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>6-Month Consistency Tracker</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-500 dark:text-slate-400 mt-1"&gt;Mark each day you complete your Harada routine. Build the streak!&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center gap-4 bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-3xl font-bold text-emerald-600" id="currentStreak"&gt;0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-slate-500 uppercase tracking-wider"&gt;Day Streak&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-px h-12 bg-slate-200 dark:bg-slate-700"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-3xl font-bold text-blue-600" id="totalMarked"&gt;0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-slate-500 uppercase tracking-wider"&gt;Total Days&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="month-grid" id="sixMonthCalendar"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-6 flex items-center gap-6 text-sm text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-4 h-4 rounded bg-emerald-500"&gt;&lt;/div&gt; Completed</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-4 h-4 rounded bg-slate-200 dark:bg-slate-700"&gt;&lt;/div&gt; Missed</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-4 h-4 rounded bg-blue-500 ring-2 ring-blue-300"&gt;&lt;/div&gt; Today</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="ml-auto text-xs italic"&gt;Click any day to toggle completion&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="glass-panel rounded-2xl p-8 fade-in-up stagger-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold mb-6 flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i data-lucide="clipboard-check" class="w-7 h-7 text-purple-500"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Weekly Harada Review</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;Overall Progress This Week (%)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="number" id="weeklyProgress" class="w-full text-3xl font-bold bg-transparent border-none focus:outline-none text-slate-800 dark:text-white" placeholder="0" min="0" max="100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-2 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div id="weeklyProgressBar" class="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-500" style="width: 0%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;Biggest Win This Week&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;textarea id="weeklyWin" rows="3" class="w-full bg-slate-50 dark:bg-slate-900 rounded-lg p-3 text-sm border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none" placeholder="What was your biggest achievement this week?"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"&gt;One Action to Improve Next Week&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;textarea id="weeklyImprovement" rows="3" class="w-full bg-slate-50 dark:bg-slate-900 rounded-lg p-3 text-sm border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="What will you do differently next week?"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-semibold text-lg flex items-center gap-2 text-slate-800 dark:text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="link" class="w-5 h-5 text-blue-500"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Kenya EPR Resources</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://nema.go.ke/extended-producer-responsibility-epr/" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="external-link" class="w-5 h-5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="font-medium text-sm"&gt;Official NEMA EPR Regulations 2024&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-500"&gt;Read one section daily&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://nema.go.ke/wp-content/uploads/2024/10/EPR-Plan-Template.pdf" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="file-text" class="w-5 h-5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="font-medium text-sm"&gt;EPR Plan Template (Official)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-500"&gt;Download &amp; study&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://new.kenyalaw.org/akn/ke/act/ln/2024/176/eng@2025-03-24" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="scale" class="w-5 h-5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="font-medium text-sm"&gt;Sustainable Waste Management Act&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-500"&gt;Legal Notice 2024&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://www.eprok.co.ke/" target="_blank" class="resource-link flex items-center gap-3 p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;i data-lucide="users-2" class="w-5 h-5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="font-medium text-sm"&gt;KEPRO / EPROK Producer Orgs&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-500"&gt;Explore partnership&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="mt-6 p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex items-start gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i data-lucide="lightbulb" class="w-5 h-5 text-emerald-600 mt-0.5"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="font-medium text-sm text-emerald-800 dark:text-emerald-300"&gt;WWF Alignment Tip&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-sm text-emerald-700 dark:text-emerald-400 mt-1"&gt;Link one current WWF project to EPR consulting work this week. Document the connection.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="glass-panel rounded-2xl p-8 fade-in-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-2xl font-bold mb-6 flex items-center gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i data-lucide="grid-3x3" class="w-7 h-7 text-indigo-500"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Visual 8×8 Grid Status</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-4 md:grid-cols-8 gap-3" id="visualGrid"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-orange-50 dark:bg-orange-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-orange-600" id="bodyCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Body&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-blue-600" id="controlCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Control&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-purple-50 dark:bg-purple-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-purple-600" id="techniqueCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Technique&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-cyan-50 dark:bg-cyan-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-cyan-600" id="digitalCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Digital&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-pink-50 dark:bg-pink-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-pink-600" id="mindCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Mind&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-amber-600" id="spiritCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Spirit&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-emerald-600" id="karmaCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Karma&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="p-3 rounded-lg bg-indigo-50 dark:bg-indigo-900/20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-2xl font-bold text-indigo-600" id="teamCount"&gt;0/8&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-slate-600 dark:text-slate-400"&gt;Team&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lucide.createIcons();</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// daily: true = must be ticked every day; false = milestone (tick once)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const haradaData = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>body: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "30-minute run or strength training every morning", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "8 hours of quality sleep with fixed bedtime", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Nutritious, locally sourced Kenyan meals (focus on sustainable ingredients)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "10-minute yoga or stretch break during workday", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Drink 3 litres of water daily", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Weekly fitness tracking + annual health check-up", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Active commuting or walking meetings when possible", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Monthly nature hike or team sport for recovery and networking", daily: false }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>control: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Calendar-block 1 dedicated hour daily for EPR/digital growth", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Morning priority review (WWF tasks vs. consultant development)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Practise saying \"no\" to non-aligned requests", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Pomodoro technique for all focused work", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Strict log-off time to protect evenings", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Daily discipline reflection journal", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Automate routine WWF tasks to free capacity", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Sunday time-audit to balance current role and new path", daily: false }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>technique: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Read &amp; summarise one EPR report/article daily (Kenya + global)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Study Kenya EPR regulations vs. international benchmarks", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Complete one online EPR module (UNEP, EU, or similar)", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Draft one EPR policy recommendation daily for a sector", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Analyse one successful African EPR case study weekly", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Update personal EPR knowledge base with new laws", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Simulate client EPR compliance scenarios", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Explain one EPR concept to a WWF colleague weekly", daily: false }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>digital: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "30 minutes daily mastering a tool (AI, Tableau, Python, GIS, etc.)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Build/update personal EPR/digital portfolio website", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Apply one digital tool to a current WWF policy project", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Use AI daily for policy drafting or data analysis", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Create one digital content piece weekly (LinkedIn/blog/infographic)", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Progress toward one digital certification (tracked daily)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Experiment with blockchain/digital tracking for EPR systems", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Code simple sustainability data scripts or dashboards", daily: false }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>mind: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Read 10 pages daily on consulting, leadership, or digital transformation", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "5-minute visualisation of your future EPR consultant success", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Daily positive affirmations + growth-mindset reminders", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Solve one real EPR/digital policy challenge on paper", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Seek and apply weekly feedback from mentors", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Emotional intelligence exercises (active listening practice)", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Embrace challenges in your WWF role as training ground", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "15-minute daily presentation rehearsal on EPR topics", daily: true }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>spirit: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Daily reaffirmation of your \"why\" (Kenya's green economy impact)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Celebrate every small daily win", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Link one WWF project to future EPR consulting work", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Share one insight with the WWF team to inspire others", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Listen to one sustainability leadership podcast episode weekly", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Set and track quarterly consultant milestones", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Maintain a gratitude journal for current WWF opportunities", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Mentor a young green-economy professional to fuel your drive", daily: false }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>karma: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Act with full integrity in every WWF interaction", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Participate in community clean-up or environmental service weekly", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Provide value-first in all networking (no hard selling)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Ensure every piece of advice is transparent and unbiased", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Share free EPR resources openly (LinkedIn, workshops)", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Treat every stakeholder with respect and fairness", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Align all work with Kenya's SDGs and national green goals", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Stay humble and keep learning to build long-term trust", daily: true }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>team: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Connect with one new EPR/digital sustainability contact daily (LinkedIn)", daily: true },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Engage actively in Kenya/Africa EPR forums and groups", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Collaborate on at least one cross-functional WWF project", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Attend one virtual or in-person industry event monthly", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Follow up weekly with key contacts (offer help first)", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Explore partnerships with digital agencies for future projects", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Join relevant professional associations (circular economy, EPR networks)", daily: false },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{ text: "Host internal WWF knowledge-sharing sessions on EPR/digital topics", daily: false }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const pillarColors = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>body: 'bg-orange-500', control: 'bg-blue-500', technique: 'bg-purple-500',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>digital: 'bg-cyan-500', mind: 'bg-pink-500', spirit: 'bg-amber-500',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>karma: 'bg-emerald-500', team: 'bg-indigo-500'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// taskStatus stores milestone tasks: { 'body-0': true, ... }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// dailyStatus stores daily tasks per date: { 'body-0': { '2026-04-02': true, ... }, ... }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let taskStatus = JSON.parse(localStorage.getItem('haradaTasks')) || {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let dailyStatus = JSON.parse(localStorage.getItem('haradaDaily')) || {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let calendarData = JSON.parse(localStorage.getItem('haradaCalendar')) || {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let weeklyData = JSON.parse(localStorage.getItem('haradaWeekly')) || {};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function todayKey() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const d = new Date();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function isDailyDoneToday(taskId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return !!(dailyStatus[taskId] &amp;&amp; dailyStatus[taskId][todayKey()]);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderAllPillars();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderSixMonthCalendar();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderVisualGrid();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateStats();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadWeeklyData();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('weeklyProgress').addEventListener('input', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const val = Math.min(100, Math.max(0, e.target.value));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('weeklyProgressBar').style.width = val + '%';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>saveWeeklyData();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('weeklyWin').addEventListener('input', saveWeeklyData);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('weeklyImprovement').addEventListener('input', saveWeeklyData);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderAllPillars() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Object.keys(haradaData).forEach(pillar =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>renderPillar(pillar, haradaData[pillar]);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderPillar(pillarKey, tasks) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById(pillarKey + 'Tasks');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!container) return;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = tasks.map((task, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const taskId = `${pillarKey}-${idx}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isDaily = task.daily;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isCompleted = isDaily ? isDailyDoneToday(taskId) : (taskStatus[taskId] || false);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// For daily tasks, show how many days completed total</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let streakBadge = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (isDaily) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const daysCount = dailyStatus[taskId] ? Object.values(dailyStatus[taskId]).filter(Boolean).length : 0;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>streakBadge = `&lt;span class="text-xs px-1.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 font-semibold whitespace-nowrap"&gt;${daysCount}d&lt;/span&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="task-row flex items-center gap-3 p-3 rounded-lg ${isCompleted ? 'bg-emerald-50 dark:bg-emerald-900/20' : 'bg-white dark:bg-slate-800/50'} border border-slate-100 dark:border-slate-700 cursor-pointer group" onclick="toggleTask('${taskId}', ${isDaily})"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="checkbox" class="checkbox-harada" ${isCompleted ? 'checked' : ''} onclick="event.stopPropagation(); toggleTask('${taskId}', ${isDaily})"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-sm ${isCompleted ? 'line-through text-slate-400' : 'text-slate-700 dark:text-slate-300'} flex-1"&gt;${task.text}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${isDaily ? `&lt;span class="text-xs px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300 font-semibold whitespace-nowrap"&gt;Daily&lt;/span&gt;` : `&lt;span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 font-medium whitespace-nowrap"&gt;Once&lt;/span&gt;`}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${streakBadge}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${isCompleted ? '&lt;i data-lucide="check-circle" class="w-5 h-5 text-emerald-500 shrink-0"&gt;&lt;/i&gt;' : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).join('');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>lucide.createIcons();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updatePillarPercentage(pillarKey, tasks.length);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleTask(taskId, isDaily) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isDaily) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Toggle today's entry for daily tasks</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!dailyStatus[taskId]) dailyStatus[taskId] = {};</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const today = todayKey();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>dailyStatus[taskId][today] = !dailyStatus[taskId][today];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>localStorage.setItem('haradaDaily', JSON.stringify(dailyStatus));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>taskStatus[taskId] = !taskStatus[taskId];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>localStorage.setItem('haradaTasks', JSON.stringify(taskStatus));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const pillarKey = taskId.split('-')[0];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderPillar(pillarKey, haradaData[pillarKey]);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderVisualGrid();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateStats();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Celebrate if all 8 tasks in the pillar are done today/overall</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const pillarDone = haradaData[pillarKey].filter((task, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const tid = `${pillarKey}-${idx}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return task.daily ? isDailyDoneToday(tid) : (taskStatus[tid] || false);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (pillarDone === 8) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>celebratePillarCompletion(pillarKey);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updatePillarPercentage(pillarKey, total) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const completed = haradaData[pillarKey].filter((task, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const tid = `${pillarKey}-${idx}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return task.daily ? isDailyDoneToday(tid) : (taskStatus[tid] || false);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const percentage = Math.round((completed / total) * 100);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const percentEl = document.getElementById(pillarKey + 'Percent');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const scoreEl = document.getElementById(pillarKey + 'Score');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const countEl = document.getElementById(pillarKey + 'Count');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (percentEl) percentEl.textContent = percentage + '%';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (scoreEl) scoreEl.textContent = percentage + '%';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (countEl) countEl.textContent = `${completed}/${total}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderSixMonthCalendar() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('sixMonthCalendar');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const months = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const today = new Date();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; 6; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const d = new Date(today.getFullYear(), today.getMonth() + i, 1);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>months.push({</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>name: d.toLocaleString('default', { month: 'long' }),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>shortName: d.toLocaleString('default', { month: 'short' }),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>year: d.getFullYear(),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>days: new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate(),</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>key: `${d.getFullYear()}-${d.getMonth()}`</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = months.map((month, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const monthData = calendarData[month.key] || {};</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const completedDays = Object.values(monthData).filter(v =&gt; v).length;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const percentage = Math.round((completedDays / month.days) * 100);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isCurrentMonth = idx === 0;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between items-center mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h4 class="font-bold text-lg ${isCurrentMonth ? 'text-emerald-600 dark:text-emerald-400' : ''}"&gt;${month.shortName}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;p class="text-xs text-slate-500"&gt;${month.year}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="text-2xl font-bold ${percentage &gt; 50 ? 'text-emerald-600' : 'text-slate-600'}"&gt;${percentage}%&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-7 gap-1 text-xs mb-2 text-center text-slate-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span&gt;S&lt;/span&gt;&lt;span&gt;M&lt;/span&gt;&lt;span&gt;T&lt;/span&gt;&lt;span&gt;W&lt;/span&gt;&lt;span&gt;T&lt;/span&gt;&lt;span&gt;F&lt;/span&gt;&lt;span&gt;S&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-7 gap-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${Array.from({length: month.days}, (_, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>const day = i + 1;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>const isCompleted = monthData[day];</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>const isToday = isCurrentMonth &amp;&amp; day === today.getDate();</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;button class="calendar-day aspect-square rounded-lg flex items-center justify-center text-xs font-medium</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>${isCompleted ? 'bg-emerald-500 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600'}</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>${isToday ? 'ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-slate-800 bg-blue-50 dark:bg-blue-900/30 text-blue-600' : ''}"</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>onclick="toggleCalendarDay('${month.key}', ${day})"</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>title="${month.name} ${day}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>${day}</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                        </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center text-xs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-slate-500"&gt;${completedDays} days completed&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="w-16 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="h-full bg-emerald-500 rounded-full" style="width: ${percentage}%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).join('');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateStreakStats();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleCalendarDay(monthKey, day) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!calendarData[monthKey]) calendarData[monthKey] = {};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>calendarData[monthKey][day] = !calendarData[monthKey][day];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('haradaCalendar', JSON.stringify(calendarData));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderSixMonthCalendar();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateStats();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const streak = calculateCurrentStreak();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (calendarData[monthKey][day] &amp;&amp; (streak === 7 || streak === 30 || streak === 100)) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>celebrateStreak(streak);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function calculateCurrentStreak() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let streak = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const today = new Date();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const checkDate = new Date(today);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>while (true) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const monthKey = `${checkDate.getFullYear()}-${checkDate.getMonth()}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const day = checkDate.getDate();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const monthData = calendarData[monthKey] || {};</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (monthData[day]) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>streak++;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>checkDate.setDate(checkDate.getDate() - 1);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>break;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return streak;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateStreakStats() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const streak = calculateCurrentStreak();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let total = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Object.values(calendarData).forEach(month =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>total += Object.values(month).filter(v =&gt; v).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('currentStreak').textContent = streak;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('totalMarked').textContent = total;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderVisualGrid() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('visualGrid');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const pillars = ['body', 'control', 'technique', 'digital', 'mind', 'spirit', 'karma', 'team'];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = pillars.map(pillar =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const completed = haradaData[pillar].filter((task, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const tid = `${pillar}-${idx}`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return task.daily ? isDailyDoneToday(tid) : (taskStatus[tid] || false);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}).length;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const total = 8;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const cells = [];</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; total; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const isFilled = i &lt; completed;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>cells.push(`</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="aspect-square rounded-md ${isFilled ? pillarColors[pillar] : 'bg-slate-200 dark:bg-slate-700'}<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${isFilled ? 'shadow-sm' : ''} transition-all duration-300 hover:scale-110"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>return `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs font-bold text-center mb-2 uppercase tracking-wider text-slate-600 dark:text-slate-400"&gt;${pillar}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid grid-cols-4 gap-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${cells.join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).join('');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateStats() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let totalCompleted = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let totalTasks = 0;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>Object.keys(haradaData).forEach(pillar =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const tasks = haradaData[pillar];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>totalTasks += tasks.length;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const completed = tasks.filter((task, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const tid = `${pillar}-${idx}`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return task.daily ? isDailyDoneToday(tid) : (taskStatus[tid] || false);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}).length;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>totalCompleted += completed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const overallPercentage = Math.round((totalCompleted / totalTasks) * 100);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('overallProgress').textContent = overallPercentage + '%';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>Object.keys(haradaData).forEach(pillar =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>updatePillarPercentage(pillar, haradaData[pillar].length);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function loadWeeklyData() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (weeklyData.progress) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('weeklyProgress').value = weeklyData.progress;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('weeklyProgressBar').style.width = weeklyData.progress + '%';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (weeklyData.win) document.getElementById('weeklyWin').value = weeklyData.win;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (weeklyData.improvement) document.getElementById('weeklyImprovement').value = weeklyData.improvement;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function saveWeeklyData() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>weeklyData = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>progress: document.getElementById('weeklyProgress').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>win: document.getElementById('weeklyWin').value,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>improvement: document.getElementById('weeklyImprovement').value</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('haradaWeekly', JSON.stringify(weeklyData));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function celebratePillarCompletion(pillar) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; 50; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const confetti = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.className = 'confetti';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.style.left = Math.random() * 100 + 'vw';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.style.backgroundColor = ['#10b981', '#3b82f6', '#f59e0b', '#ec4899'][Math.floor(Math.random() * 4)];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.body.appendChild(confetti);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; confetti.remove(), 4000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert(`🎉 Congratulations! You've completed all 8 tasks in the ${pillar.toUpperCase()} pillar!`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function celebrateStreak(days) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let i = 0; i &lt; 100; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const confetti = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.className = 'confetti';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.style.left = Math.random() * 100 + 'vw';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.style.backgroundColor = '#10b981';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.body.appendChild(confetti);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; confetti.remove(), 5000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert(`🔥 Incredible! You've maintained a ${days}-day streak! Keep the momentum going!`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleTheme() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.documentElement.classList.toggle('dark');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
